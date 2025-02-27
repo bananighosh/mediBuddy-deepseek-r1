@@ -11,7 +11,6 @@ This repository provides a comprehensive guide to fine-tuning the DeepSeek model
 
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
 - [Fine-Tuning Steps](#fine-tuning-steps)
 - [Mixed Precision Training](#mixed-precision-training)
 - [Differences in Model Output](#differences-in-model-output)
@@ -56,18 +55,6 @@ The goal of this project is to fine-tune the DeepSeek model, adapting it for dom
 - **Unsloth (fast_lora):** For optimized LoRA kernels
 - **Weights & Biases (wandb):** For experiment tracking
 - **Other dependencies:** Listed in `requirements.txt`
-
----
-
-## Installation
-
-Clone the repository and install the required packages:
-
-```bash
-git clone https://github.com/yourusername/deepseek-finetune.git
-cd deepseek-finetune
-pip install -r requirements.txt
-```
 
 ---
 
