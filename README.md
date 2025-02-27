@@ -66,7 +66,8 @@ Clone the repository and install the required packages:
 ```bash
 git clone https://github.com/yourusername/deepseek-finetune.git
 cd deepseek-finetune
-pip install -r requirements.txt```
+pip install -r requirements.txt
+```
 
 ---
 
@@ -105,4 +106,13 @@ The fine-tuning process was executed on an NVIDIA A100 GPU (40GB), selected for 
 
 ## Results and Monitoring
 
-Training progress and performance metrics are tracked using Weights & Biases. For detailed metrics, visualizations, and performance comparisons, please refer to our [Wandb Dashboard](https://wandb.ai/bg2502_hpml/huggingface/runs/7dfh52g2?nw=nwuserbg2502)
+Training progress and performance metrics are tracked using Weights & Biases. For detailed metrics, visualizations, and
+performance comparisons, please refer to our [Wandb Dashboard](https://wandb.ai/bg2502_hpml/huggingface/runs/7dfh52g2?nw=nwuserbg2502)
+
+### Train results
+<img width="1435" alt="Screenshot 2025-02-27 at 4 46 21 PM" src="https://github.com/user-attachments/assets/2d392dc5-b60f-4360-a247-8fdd7bfc70d5" />
+
+### GPU Power usage
+<img width="1436" alt="Screenshot 2025-02-27 at 4 47 34 PM" src="https://github.com/user-attachments/assets/a56dceab-ea41-486e-90bb-11cd5d7eee56" />
+
+
