@@ -1,7 +1,7 @@
 # mediBuddy
 Deepseek-R1 fine-tuned to be an efficient medical assistant chatbot
 
-# Fine-Tuning DeepSeek Model using LoRA
+## Fine-Tuning DeepSeek Model using LoRA
 
 This repository provides a comprehensive guide to fine-tuning the DeepSeek model using LoRA (Low-Rank Adaptation) along with SFTTrainer. The process leverages parameter-efficient fine-tuning and mixed precision training to improve domain-specific performance while reducing memory usage and speeding up training.
 
@@ -16,7 +16,6 @@ This repository provides a comprehensive guide to fine-tuning the DeepSeek model
 - [Mixed Precision Training](#mixed-precision-training)
 - [Differences in Model Output](#differences-in-model-output)
 - [GPU Information](#gpu-information)
-- [How to Run](#how-to-run)
 - [Results and Monitoring](#results-and-monitoring)
 
 ---
@@ -67,8 +66,16 @@ Clone the repository and install the required packages:
 ```bash
 git clone https://github.com/yourusername/deepseek-finetune.git
 cd deepseek-finetune
-pip install -r requirements.txt
-```
+pip install -r requirements.txt```
+
+---
+
+## Fine-Tuning Steps
+- Load Base Model & Tokenizer
+- Apply LoRA Configuration - train the target modules for generations query, key and value proj modules
+- Configure Training Parameters with SFT trainer
+- Start finetuning by running the trainer
+
 ---
 
 ## Mixed Precision Training
@@ -93,3 +100,9 @@ After fine-tuning, MediBuddy delivers significant improvements over the generic 
 ## GPU Information
 
 The fine-tuning process was executed on an NVIDIA A100 GPU (40GB), selected for its robust support for FP16 mixed precision training and high throughput, which substantially accelerates the training process.
+
+---
+
+## Results and Monitoring
+
+Training progress and performance metrics are tracked using Weights & Biases. For detailed metrics, visualizations, and performance comparisons, please refer to our [Wandb Dashboard](https://wandb.ai/bg2502_hpml/huggingface/runs/7dfh52g2?nw=nwuserbg2502)
