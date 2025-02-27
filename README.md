@@ -22,6 +22,27 @@ This repository provides a comprehensive guide to fine-tuning the DeepSeek model
 ---
 
 ## Overview
+This repository details the process of creating an advanced medical assistant chatbot by fine-tuning the DeepSeek-R1 model. By leveraging LoRA for parameter-efficient fine-tuning and employing mixed precision training, MediBuddy is engineered to provide:
+
+## Key Features
+
+- **Domain-Specific Responses:** Accurate, medically informed answers. Tailored outputs for medical queries.
+- **Enhanced Contextual Understanding:** Maintains context across complex conversations, multi-turn conversations.
+- **Optimized Performance:** Faster training and inference using FP16 mixed precision.
+- **Mixed Precision Training:** Utilizes FP16 for improved computational efficiency.
+- **Parameter-Efficient Fine-Tuning:** Implements LoRA to adjust only a subset of parameters.
+- **High Performance on Modern GPUs:** Fine-tuned on an NVIDIA A100 for optimal throughput.
+
+---
+
+## Medical Application and Disclaimer
+
+MediBuddy has been specifically developed for medical applications, with an emphasis on medical imaging diagnostics and research. The model is fine-tuned on a curated dataset containing medical literature, imaging protocols, and domain-specific queries.
+
+**Disclaimer:**  
+This chatbot is intended for research and academic purposes only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for medical decisions.
+
+---
 
 The goal of this project is to fine-tune the DeepSeek model, adapting it for domain-specific tasks. By incorporating LoRA modifications and training on a custom dataset, the model produces more accurate and context-aware outputs compared to its pre-trained counterpart.
 
@@ -47,4 +68,28 @@ Clone the repository and install the required packages:
 git clone https://github.com/yourusername/deepseek-finetune.git
 cd deepseek-finetune
 pip install -r requirements.txt
+```
+---
 
+## Mixed Precision Training
+
+Mixed precision training uses FP16 (half-precision floating point) arithmetic to reduce memory usage and accelerate computations. In this project, FP16 is enabled by setting fp16=True in the training configuration. Although BF16 is an alternative on some platforms, it has been disabled (bf16=False) to ensure compatibility with our custom unsloth kernels, thereby maintaining training stability.
+
+---
+
+## Differences in Model Output
+
+After fine-tuning, MediBuddy delivers significant improvements over the generic pre-trained model:
+|            Aspect            |                    Before Fine-Tuning                   |                      After Fine-Tuning (Deepseek-R1)                      |
+|:----------------------------:|:-------------------------------------------------------:|:-------------------------------------------------------------------------:|
+| **Response Specificity**     | Generic, broad responses                                | Tailored, medically accurate, and domain-specific responses               |
+| **Contextual Understanding** | Limited retention of context in complex queries         | Enhanced context awareness for multi-turn medical dialogs                 |
+| **Technical Accuracy**       | Lower precision in handling specialized medical queries | Higher precision with accurate medical terminology and diagnostic details |
+| **Coherence**                | Basic coherence without specialized structure           | Improved coherence with structured, relevant medical information          |
+
+
+---
+
+## GPU Information
+
+The fine-tuning process was executed on an NVIDIA A100 GPU (40GB), selected for its robust support for FP16 mixed precision training and high throughput, which substantially accelerates the training process.
